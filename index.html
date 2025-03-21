@@ -147,7 +147,7 @@ nav.topnav {
     left: -250px;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 10px;
     background-color: rgb(255, 255, 255);
     border-right: 1px solid #000;
   }
@@ -168,9 +168,8 @@ nav.topnav {
   }
   .sidenav li p {
     margin-top:4px;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
+    margin-left: 25px;
+    position: relative;
   }
   .sidenav li {
     display: flex;
@@ -238,7 +237,7 @@ nav.topnav {
   .closeNav {
       color:var(--primary);
       position:absolute;
-      top:100px;
+      top:45px;
       right:15px;
       cursor:pointer;
       transition: 0.1s;
@@ -473,7 +472,6 @@ text-align: left;
         <span class="material-icons navOpen"  onclick="openNav()">menu</span>
       </nav>
       <nav id="mySidenav" class="sidenav">
-        <div class="inner">
             <a href="#home">
                 <img class="logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
             </a>
@@ -517,7 +515,6 @@ text-align: left;
                 document.getElementById("overlay").style.display = "none"
             }
             </script>
-        </div>
 </nav>
 
       <main>
