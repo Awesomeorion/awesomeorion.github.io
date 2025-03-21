@@ -65,6 +65,7 @@ nav.topnav {
 .nav-links {
     list-style: none;
     display: flex;
+    display: none;
 }
 
 .nav-links a {
@@ -162,7 +163,7 @@ nav.topnav {
   .sidenav ul a li .material-icons {
     border-radius: 50%;
     padding: 5px;
-    background: rgb(16, 0, 109);
+    background: var(--primary);
     color: #fff;
   }
   .sidenav li p {
@@ -179,37 +180,34 @@ nav.topnav {
     margin-bottom: 5px;
     width:84%;
   }
-  .sidenav .inner{
-    top:50%;
-
-  }
   .btn {
     border: none;
     outline: none;
     padding: 10px 16px;
     cursor: pointer;
     font-size: 18px;
+    transition: .1s;
   }
   .btn:hover {
       border-right:2px solid var(--primary);
       background:var(--primary-hover);
       border-top-left-radius:7px;
       border-bottom-left-radius:7px;
+      color: var(--primary);
   }
-  .btn:hover, .closeNav:hover {
-    color: var(--primary);
+  .closeNav:hover {
+    color: var(--primary-two);
   }
   nav.sidenav .logo {
     position:relative;
     width:170px;
-    top:0;
     left:50%;
     transform:translate(-50%);
     transition: 0.1s;
     padding: 0 35px;
   }
   nav.sidenav p.text {
-    position:relative;  
+    position:absolute;  
     color:var(--primary);
     top: 16px;
     left: 20px;
@@ -243,6 +241,7 @@ nav.topnav {
       top:100px;
       right:15px;
       cursor:pointer;
+      transition: 0.1s;
   }
 
 /* Hero Section Styling*/
