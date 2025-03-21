@@ -6,9 +6,306 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 " />
     <title>Home | Embody Hockey</title> 
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons&display=swap'>
-    <link rel='stylesheet' href='index.css'>
     <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" type="image/png">
 </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gidole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary: rgb(193, 21, 21);
+  --primary-hover: rgba(255, 0, 0, 0.15);
+  --primary-two: rgb(26, 0, 170);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background:var(--primary-color-light);
+
+}
+
+/* Topnav Styling*/
+nav {
+    position:relative;
+    height:15svh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 2rem;
+    z-index:100;
+    top:0;
+    left:0;
+    transition: 0.2s;
+    background-color:#fff;
+    border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.logo img{
+    position:absolute;
+    width:170px;
+    top:0;
+    left:50%;
+    transform:translate(-50%);
+    transition: 0.1s;
+    padding: 0 35px;
+}
+.logo img:hover {
+    background-color: var(--primary-hover);
+}
+.logo img:active {
+    border: 2px solid red;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links a {
+    font-family: Gidole;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding:10px 20px;
+    border-radius: 200px;
+    transition: 0.1s;
+}
+.nav-links li+li{
+    margin-left:5px;
+}
+.nav-links a:active {
+    color: var(--primary-two);
+}
+.nav-links a:hover {
+    background-color: var(--primary-hover);
+}
+.nav-links li a.active {
+    color: var(--primary);
+    background-color: var(--primary-hover);
+}
+.nav-links li a.active:hover {
+    color: #000;
+}
+
+.js-links {
+    color: var(--primary);
+    cursor:default;
+    margin-left:20px;
+    display: flex;
+}
+.js-links span {
+    padding:2px;
+    margin-top:5px;
+    font-size: 5px;
+    transform: scale(6);
+    cursor:pointer;
+    border-radius: 50%;
+}
+.js-links .cart-icon .items-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    background-color: var(--primary-two);
+    width:20px;
+    height:20px;
+    border:2px solid #fff;
+    text-align: center;
+    top:35px;
+    left:57px;
+    border-radius: 50%;
+    color:#fff;
+    font-size:13px;
+    font-family: sans-serif;
+}
+.js-links .account-icon {
+    margin-left:40px;
+}
+.js-links span:hover {
+    background-color: var(--primary-hover);
+}
+.js-links span:active {
+    color: rgb(133, 23, 23);
+}
+
+/* Hero Section Styling*/
+.bg-img {
+    background:url(https://static.wixstatic.com/media/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg/v1/fill/w_2515,h_1175,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg) no-repeat;
+    background-size:cover;
+    background-position: center;
+    height:85svh;
+    filter:blur(2.5px);
+}
+.hero-info {
+    top:15%;
+    left:50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+.hero-info button {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-family: Poppins;
+    transition: 0.1s;
+    margin:15px 0;
+    text-transform: capitalize;
+}
+.hero-info button:hover {
+    background-color: rgb(168, 0, 0);
+}
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+.top-img {
+    width: 70vw;
+    max-width:400px;
+    clip-path: polygon(5% 15%, 95% 15%, 95% 80%, 5% 80%);
+    margin-bottom:-70px;
+}
+
+/* Footer Styling*/
+footer {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    background-color: rgb(10, 0, 68);
+    background-color: #fff;
+    position:relative;
+    min-height:250px;
+}
+footer a {
+  text-align: center;
+  text-decoration: none;
+  color:var(--primary);
+  transition: 0.1s;
+}
+footer a:hover {
+    text-decoration:underline;
+}
+
+footer p {
+    color:#000;
+}
+footer .description{
+    font-size:0.9rem;
+    max-width:600px;
+    margin: 0 3vw;
+}
+footer .info{
+position:relative;
+align-items:center;
+justify-content:center;
+text-align:center;
+left:0;
+}
+footer .social-media {
+    margin:15px 0;
+}
+
+/* Homepage Styling */
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 80svh);
+    gap: 0;
+    height: 100%;
+}
+.grid-item {
+display: flex;
+flex-direction:column;
+padding:15px;
+background-color: rgb(12, 0, 81);
+color:#fff;
+text-align: left;
+}
+.grid-item h1 {
+    font-size:3rem;
+    font-family: Poppins;
+    color:rgb(255, 99, 99);
+}
+
+.left {
+    background-color: #fff;
+    color:#000;
+}
+
+.grid-item .item-inner .btn {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-family: Poppins;
+    transition: 0.1s;
+    top:30px;
+    text-transform: capitalize;
+    text-decoration: none;
+    max-width:250px;
+}
+.grid-item .btn:hover {
+    background-color: rgb(168, 0, 0);
+}
+.grid-item .item-inner {
+    position: relative;
+    padding:0 3vmin;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.motto-img {
+    background:url(https://static.wixstatic.com/media/170672_08c8e83966334dc2a23e567f04922dfc~mv2.jpg/v1/fill/w_1110,h_1277,al_c,q_85,enc_avif,quality_auto/IMG_1523.jpg);
+    background-size:cover;
+    background-position: center;
+}
+.about-img {
+    background:url(https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png);
+    background-size:cover;
+    background-position: center;
+}
+.project-img {
+    background:url(https://static.wixstatic.com/media/170672_db74c3f0cfbd44b2b60b33ef8059668c~mv2.jpg/v1/fill/w_823,h_549,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4055_JPG.jpg);
+    background-size:cover;
+    background-position: center;
+}
+  </style>
   <body>
     <nav>
         <script src="js/navbar.js"></script>
