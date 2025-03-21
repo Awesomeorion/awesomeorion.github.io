@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 " />
     <title>Home | Embody Hockey</title> 
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons&display=swap'>
+    <link rel='stylesheet' href='index.css'>
     <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" type="image/png">
 </head>
   <style>
@@ -25,11 +26,11 @@
 body {
     font-family: Poppins, sans-serif;
     background:var(--primary-color-light);
-
+    overflow-x: hidden;
 }
 
-/* Topnav Styling*/
-nav {
+/* Topnav Styling */
+nav.topnav {
     position:relative;
     height:15svh;
     display: flex;
@@ -134,6 +135,116 @@ nav {
     color: rgb(133, 23, 23);
 }
 
+/* Mobile Menu Styling */
+.sidenav {
+    font-size: 3vw;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: -250px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #000;
+  }
+  .sidenav ul {
+    list-style: none;
+  }
+  .sidenav ul a {
+    display:flex;
+    flex-direction:column;
+    text-decoration: none;
+    color: #000;
+  }
+  .sidenav ul a li .material-icons {
+    border-radius: 50%;
+    padding: 5px;
+    background: rgb(16, 0, 109);
+    color: #fff;
+  }
+  .sidenav li p {
+    margin-top:4px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+  }
+  .sidenav li {
+    display: flex;
+    padding: 1.5vh;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-bottom: 5px;
+    width:84%;
+  }
+  .sidenav .inner{
+    top:50%;
+
+  }
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .btn:hover {
+      border-right:2px solid var(--primary);
+      background:var(--primary-hover);
+      border-top-left-radius:7px;
+      border-bottom-left-radius:7px;
+  }
+  .btn:hover, .closeNav:hover {
+    color: var(--primary);
+  }
+  nav.sidenav .logo {
+    position:relative;
+    width:170px;
+    top:0;
+    left:50%;
+    transform:translate(-50%);
+    transition: 0.1s;
+    padding: 0 35px;
+  }
+  nav.sidenav p.text {
+    position:absolute;  
+    color:var(--primary);
+    top: 16px;
+    left: 20px;
+    font-size:21px;
+    font-weight:bold;
+    transition:0.1s;
+  }
+  nav.sidenav p.text:hover {
+    color:var(--primary-dark);
+    text-shadow:0 0 5px #000;
+    cursor:pointer;
+  }
+  
+  .navOpen {
+      color:var(--primary);
+      cursor:pointer;
+      transition:0.2s;
+      transform:scale(1.1);
+      border-radius: 50%;
+      padding:12px;
+  }
+  .navOpen:hover {
+    background-color: var(--primary-hover);
+}
+.navOpen:active {
+    color: rgb(133, 23, 23);
+}
+  .closeNav {
+      color:var(--primary);
+      position:absolute;
+      top:100px;
+      right:15px;
+      cursor:pointer;
+  }
+
 /* Hero Section Styling*/
 .bg-img {
     background:url(https://static.wixstatic.com/media/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg/v1/fill/w_2515,h_1175,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg) no-repeat;
@@ -159,7 +270,7 @@ nav {
     padding: 15px 30px;
     font-size: 16px;
     color: white;
-    background-color: var(--primary);
+    background: linear-gradient(45deg, var(--primary), rgb(255, 178, 178));
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -169,9 +280,12 @@ nav {
     transition: 0.1s;
     margin:15px 0;
     text-transform: capitalize;
+    background-size: 200% 200%;
+    transition: background-position 1s,transform 0.75s;
 }
 .hero-info button:hover {
-    background-color: rgb(168, 0, 0);
+    background-position: 100% 0;
+    transform: scale(1.1);
 }
 .ripple {
     position: absolute;
@@ -257,11 +371,6 @@ text-align: left;
     color:rgb(255, 99, 99);
 }
 
-.left {
-    background-color: #fff;
-    color:#000;
-}
-
 .grid-item .item-inner .btn {
     position: relative;
     padding: 15px 30px;
@@ -289,6 +398,10 @@ text-align: left;
     top:50%;
     transform: translateY(-50%);
 }
+.grid-item.left {
+    background-color: #fff;
+    color:#000;
+}
 
 .motto-img {
     background:url(https://static.wixstatic.com/media/170672_08c8e83966334dc2a23e567f04922dfc~mv2.jpg/v1/fill/w_1110,h_1277,al_c,q_85,enc_avif,quality_auto/IMG_1523.jpg);
@@ -305,9 +418,35 @@ text-align: left;
     background-size:cover;
     background-position: center;
 }
+@media (max-width:750px) {
+    .main {
+       grid-template-columns: 100vw;
+    }
+    div.side-img{
+        display: none;
+    }
+    div.about{
+        background:linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)),url(https://static.wixstatic.com/media/170672_08c8e83966334dc2a23e567f04922dfc~mv2.jpg/v1/fill/w_1110,h_1277,al_c,q_85,enc_avif,quality_auto/IMG_1523.jpg);
+        background-size:cover;
+        background-position: center;
+    }
+    div.contact{
+        background:linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png);
+        background-size:cover;
+        background-position: center;
+    }
+    .grid-item.left {
+        color:#fff;
+    }
+    div.programs{
+        background:linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(https://static.wixstatic.com/media/170672_db74c3f0cfbd44b2b60b33ef8059668c~mv2.jpg/v1/fill/w_823,h_549,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4055_JPG.jpg);
+        background-size:cover;
+        background-position: center;
+    }
+}
   </style>
   <body>
-    <nav>
+    <nav class="topnav">
         <script src="js/navbar.js"></script>
         <div class="js-links">
             <div class="cart-icon">
@@ -332,7 +471,55 @@ text-align: left;
             <li><a href="#programs">Programs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <span class="material-icons navOpen"  onclick="openNav()">menu</span>
       </nav>
+      <nav id="mySidenav" class="sidenav">
+        <div class="inner">
+            <a href="#home">
+                <img class="logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
+            </a>
+                <span class="material-icons closeNav" onclick="closeNav()">close</span>
+            <ul>
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">home</span>
+                    <p>Home</p>
+                </li>
+                </a>
+                
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">quiz</span>
+                    <p>About</p>
+                </li>
+                </a>
+                
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">sports_hockey</span>
+                    <p>Programs</p>
+                </li>
+                </a>
+        
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">call</span>
+                    <p>Contact</p>
+                </li>
+                </a>
+            </ul>
+        <script type>
+            function openNav() {
+                document.getElementById("mySidenav").style.left = "0px";
+                document.getElementById("overlay").style.display = "block"
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.left = "-250px";
+                document.getElementById("overlay").style.display = "none"
+            }
+            </script>
+        </div>
+</nav>
 
       <main>
         <header>
@@ -345,8 +532,8 @@ text-align: left;
         </header>
     </main>
     <div class="main">
-        <div class="grid-item motto-img"></div>
-        <div class="grid-item">
+        <div class="grid-item motto-img side-img"></div>
+        <div class="grid-item about">
             <div class="item-inner">
                 <h1>About Us</h1>
                 <p>
@@ -358,19 +545,19 @@ text-align: left;
                 <a class="btn">Read More</a>
             </div>
         </div>      
-        <div class="grid-item left">
+        <div class="grid-item left contact">
             <div class="item-inner">
                 <h1>Contact Us</h1>
                 <p>We’d love to hear from you! If you have questions about our programs or need assistance, please reach out using the contact form below, or connect with us via email or phone. Our team is here to help and will respond promptly. Thank you for your interest in Embody Hockey—let’s hit the ice together!</p>
                 <a class="btn">Contact Us</a>
             </div>
         </div>
-        <div class="grid-item about-img"></div>
-        <div class="grid-item project-img"></div>
-        <div class="grid-item">
+        <div class="grid-item about-img side-img"></div>
+        <div class="grid-item project-img side-img"></div>
+        <div class="grid-item programs">
             <div class="item-inner">
                 <h1>Programs</h1>
-                <p>At Embody Hockey, we offer a comprehensive range of training programs designed to elevate players of all ages and skill levels. Our programs focus on essential aspects of the game, including skill development, tactical understanding, and physical conditioning. Led by experienced coaches with a deep passion for the sport, each session is tailored to meet the unique needs of our players, ensuring they receive personalized attention and guidance</p>
+                <p>At Embody Hockey, we offer a comprehensive range of training programs designed to elevate players of all ages and skill levels. Our programs focus on essential aspects of the game, including skill development, tactical understanding, and physical conditioning. Led by experienced coaches with a deep passion for the sport, each session is tailored to meet the unique needs of our players, ensuring they receive personalized attention and guidance.</p>
                 <a class="btn">Browse Programs</a>
             </div>
         </div>
