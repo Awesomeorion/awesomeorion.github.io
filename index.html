@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons&display=swap'>
     <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" type="image/png">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Gidole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Gidole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --primary: rgb(193, 21, 21);
@@ -63,7 +63,6 @@ nav.topnav {
 .nav-links {
     list-style: none;
     display: flex;
-    display: none;
 }
 
 .nav-links a {
@@ -169,7 +168,7 @@ nav.topnav {
   .sidenav li p {
     font-family: Gidole;
     font-weight: bold;
-    margin-left: 1.5vw;
+    margin-left: 20px;
     position: relative;
     text-transform: capitalize;
   }
@@ -218,6 +217,7 @@ nav.topnav {
       transform:scale(1.1);
       border-radius: 50%;
       padding:12px;
+      display: none;
   }
   .navOpen:hover {
     background-color: var(--primary-hover);
@@ -407,6 +407,11 @@ text-align: left;
     background-size:cover;
     background-position: center;
 }
+@media (max-width:570px) {
+    .hero-info p{
+        margin:20px 0;
+    }
+}
 @media (max-width:750px) {
     .main {
        grid-template-columns: 100vw;
@@ -431,6 +436,14 @@ text-align: left;
         background:linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(https://static.wixstatic.com/media/170672_db74c3f0cfbd44b2b60b33ef8059668c~mv2.jpg/v1/fill/w_823,h_549,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4055_JPG.jpg);
         background-size:cover;
         background-position: center;
+    }
+}
+@media (max-width:900px) {
+    .navOpen{
+        display: block;
+    }
+    .nav-links {
+        display: none;
     }
 }
     </style>
