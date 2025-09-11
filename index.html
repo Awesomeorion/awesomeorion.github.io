@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons&display=swap'>
     <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" type="image/png">
     <style>
-     @import url('https://fonts.googleapis.com/css2?family=Gidole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Gidole&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --primary: rgb(193, 21, 21);
@@ -29,42 +29,44 @@ body {
 
 /* Topnav Styling */
 nav.topnav {
-    position:relative;
-    height:100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
-    padding: 2rem;
-    z-index:100;
-    top:0;
-    left:0;
-    transition: 0.2s;
-    background-color:#fff;
+    background-color: #fff;
     border-bottom: 1px solid rgb(196, 196, 196);
+    z-index: 100;
+    transition: top 0.3s;
+    padding:0 3vw;
 }
 
 .logo img{
     position:absolute;
-    width:170px;
+    height:100%;
+    padding:0 15px;
     top:0;
     left:50%;
     transform:translate(-50%);
     transition: 0.1s;
-    padding: 0 35px;
 }
 .logo img:hover {
     background-color: var(--primary-hover);
 }
 .logo img:active {
-    border: 2px solid red;
+    transform: scale(0.95) translate(-52.5%);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
 }
-
+.nav-links li {
+    transition: 0.1s;
+}
 .nav-links a {
     font-family: Gidole;
     font-weight: bold;
@@ -72,11 +74,14 @@ nav.topnav {
     text-decoration: none;
     text-transform: uppercase;
     padding:10px 20px;
-    border-radius: 200px;
+    border-radius: 20px;
     transition: 0.1s;
 }
 .nav-links li+li{
     margin-left:5px;
+}
+.nav-links li:active {
+    transform: scale(0.95);
 }
 .nav-links a:active {
     color: var(--primary-two);
@@ -99,12 +104,16 @@ nav.topnav {
     display: flex;
 }
 .js-links span {
-    padding:2px;
+    padding:1.5px;
     margin-top:5px;
     font-size: 5px;
     transform: scale(6);
     cursor:pointer;
     border-radius: 50%;
+    transition: 0.1s;
+}
+.js-links .cart-icon {
+    position:relative;
 }
 .js-links .cart-icon .items-num {
     display: flex;
@@ -116,12 +125,13 @@ nav.topnav {
     height:20px;
     border:2px solid #fff;
     text-align: center;
-    top:35px;
-    left:57px;
+    top:-1px;
+    left:5px;
     border-radius: 50%;
     color:#fff;
     font-size:13px;
     font-family: sans-serif;
+    z-index:10;
 }
 .js-links .account-icon {
     margin-left:40px;
@@ -130,7 +140,7 @@ nav.topnav {
     background-color: var(--primary-hover);
 }
 .js-links span:active {
-    color: rgb(133, 23, 23);
+    transform: scale(5.5);
 }
 
 /* Mobile Menu Styling */
@@ -146,7 +156,6 @@ nav.topnav {
     transition: 0.5s;
     padding-top: 10px;
     background-color: rgb(255, 255, 255);
-    border-right: 1px solid #000;
     display: flex;
     flex-direction: column;
   }
@@ -193,8 +202,12 @@ nav.topnav {
       border-bottom-left-radius:7px;
       color: var(--primary);
   }
+  .btn:active {
+      transform: scale(0.95);
+  }
   .closeNav:hover {
     color: var(--primary-two);
+    transform: scale(1.1);
   }
   nav.sidenav .logo {
     position:relative;
@@ -216,14 +229,16 @@ nav.topnav {
       transition:0.2s;
       transform:scale(1.1);
       border-radius: 50%;
-      padding:12px;
+      padding:10px;
       display: none;
   }
   .navOpen:hover {
     background-color: var(--primary-hover);
+    transform: scale(1.2);
 }
 .navOpen:active {
     color: rgb(133, 23, 23);
+    transform: scale(0.95);
 }
   .closeNav {
       color:var(--primary);
@@ -239,8 +254,8 @@ nav.topnav {
     background:url(https://static.wixstatic.com/media/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg/v1/fill/w_2515,h_1175,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_d173aad65b764777900f4637ec9ec3e3~mv2.jpg) no-repeat;
     background-size:cover;
     background-position: center;
-    height:85svh;
-    filter:blur(2.5px);
+    height:100svh;
+    filter:blur(2px);
 }
 .hero-info {
     top:15%;
@@ -293,7 +308,7 @@ nav.topnav {
     width: 70vw;
     max-width:400px;
     clip-path: polygon(5% 15%, 95% 15%, 95% 80%, 5% 80%);
-    margin-bottom:-70px;
+    margin-bottom:-80px;
 }
 
 /* Footer Styling*/
@@ -406,6 +421,20 @@ text-align: left;
     background-size:cover;
     background-position: center;
 }
+#overlay {
+    position: fixed;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity:0;
+    z-index: 100;
+    transition: 0.3s;
+}
 @media (max-width:570px) {
     
     .hero-info p{
@@ -457,7 +486,6 @@ text-align: left;
   </head>
   <body>
     <nav class="topnav">
-        <script src="js/navbar.js"></script>
         <div class="js-links">
             <div class="cart-icon">
                 <span class="material-icons">
@@ -473,7 +501,7 @@ text-align: left;
         </div>
           <div class="logo">
             <a href="#home">
-                <img src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
+                <img src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" alt="embody hockey logo"/>
             </a>
         </div>
         <ul class="nav-links">
@@ -485,7 +513,7 @@ text-align: left;
       </nav>
       <nav id="mySidenav" class="sidenav">
             <a href="#home">
-                <img class="logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
+                <img class="logo" alt="embody hockey logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
             </a>
                 <span class="material-icons closeNav" onclick="closeNav()">close</span>
             <ul>
@@ -520,20 +548,40 @@ text-align: left;
         <script type>
             function openNav() {
                 document.getElementById("mySidenav").style.left = "0px";
-                document.getElementById("overlay").style.display = "block"
+                document.getElementById("overlay").style.opacity = "1";
+                document.getElementById("overlay").style.pointerEvents = "all";
             }
             function closeNav() {
                 document.getElementById("mySidenav").style.left = "-250px";
-                document.getElementById("overlay").style.display = "none"
+                document.getElementById("overlay").style.opacity = "0";
+                document.getElementById("overlay").style.pointerEvents = "none";
             }
             </script>
+            <script>
+                let lastScrollTop = 0; // Variable to store the last scroll position
+                const navbar = document.querySelector('nav.topnav'); // Select the navbar
+
+                window.addEventListener('scroll', function() {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Get current scroll position
+
+                    if (currentScroll > lastScrollTop) {
+                        // Scrolling down
+                        navbar.style.top = '-85px'; // Hide the navbar
+                    } else {
+                        // Scrolling up
+                        navbar.style.top = '0'; // Show the navbar
+                    }
+                    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
+                });
+            </script>
+
 </nav>
 
       <main>
         <header>
             <div class="bg-img"></div>
             <div class="hero-info">
-                <img class="top-img" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png"/>
+                <img class="top-img" alt="embody hockey logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png"/>
                 <p>Elevate Your Game with Embody Hockey! Discover expert training, develop your skills, and embrace the thrill of the ice. Join us and transform your passion into performance!</p>
                 <button class="ripple-button">Get Started</button>
             </div>
@@ -597,6 +645,7 @@ text-align: left;
         </div>
         </div>
       </footer>
+      <div id="overlay" onclick="closeNav()"></div>
       <script type="module">
         document.querySelector('.ripple-button').addEventListener('click', function (e) {
             const ripple = document.createElement('span');
