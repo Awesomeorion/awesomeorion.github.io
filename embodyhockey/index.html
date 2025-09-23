@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 " />
+    <title>Home | Embody Hockey</title> 
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons&display=swap'>
+    <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" type="image/png">
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <nav class="topnav">
+        <div class="js-links">
+            <div class="cart-icon">
+                <span class="material-icons">
+                    shopping_bag
+                </span>
+                <div class="items-num">0</div>
+            </div>
+            <div class="account-icon">
+                <span class="material-icons">
+                    account_circle
+                </span>
+            </div> 
+        </div>
+          <div class="logo">
+            <a href="#home">
+                <img src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png" alt="embody hockey logo"/>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <span class="material-icons navOpen"  onclick="openNav()">menu</span>
+      </nav>
+      <nav id="mySidenav" class="sidenav">
+            <a href="#home">
+                <img class="logo" alt="embody hockey logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/170672_95ea8637ec984e0185b6a933625cdddb%7Emv2.png"/>
+            </a>
+                <span class="material-icons closeNav" onclick="closeNav()">close</span>
+            <ul>
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">home</span>
+                    <p>Home</p>
+                </li>
+                </a>
+                
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">quiz</span>
+                    <p>About</p>
+                </li>
+                </a>
+                
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">sports_hockey</span>
+                    <p>Programs</p>
+                </li>
+                </a>
+        
+                <a href="#">
+                <li class="btn">
+                    <span class="material-icons">call</span>
+                    <p>Contact</p>
+                </li>
+                </a>
+            </ul>
+        <script type>
+            function openNav() {
+                document.getElementById("mySidenav").style.left = "0px";
+                document.getElementById("overlay").style.opacity = "1";
+                document.getElementById("overlay").style.pointerEvents = "all";
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.left = "-250px";
+                document.getElementById("overlay").style.opacity = "0";
+                document.getElementById("overlay").style.pointerEvents = "none";
+            }
+            </script>
+            <script>
+                let lastScrollTop = 0; // Variable to store the last scroll position
+                const navbar = document.querySelector('nav.topnav'); // Select the navbar
+
+                window.addEventListener('scroll', function() {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Get current scroll position
+
+                    if (currentScroll > lastScrollTop) {
+                        // Scrolling down
+                        navbar.style.top = '-85px'; // Hide the navbar
+                    } else {
+                        // Scrolling up
+                        navbar.style.top = '0'; // Show the navbar
+                    }
+                    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
+                });
+            </script>
+
+</nav>
+
+      <main>
+        <header>
+            <div class="bg-img"></div>
+            <div class="hero-info">
+                <img class="top-img" alt="embody hockey logo" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png"/>
+                <p>Elevate Your Game with Embody Hockey! Discover expert training, develop your skills, and embrace the thrill of the ice. Join us and transform your passion into performance!</p>
+                <button class="ripple-button">Get Started</button>
+            </div>
+        </header>
+    </main>
+    <div class="main">
+        <div class="grid-item motto-img side-img"></div>
+        <div class="grid-item about">
+            <div class="item-inner">
+                <h1>About Us</h1>
+                <p>
+                    Welcome to Embody Hockey,
+
+    Nashville's Fastest Growing Hockey Development Program.
+
+    Embody Hockey is a hockey development program founded by retired professional hockey player and development coach, Jake Flegel. With a six-year professional career and over 15 years of experience coaching at ...</p>
+                <a class="btn">Read More</a>
+            </div>
+        </div>      
+        <div class="grid-item left contact">
+            <div class="item-inner">
+                <h1>Contact Us</h1>
+                <p>We’d love to hear from you! If you have questions about our programs or need assistance, please reach out using the contact form below, or connect with us via email or phone. Our team is here to help and will respond promptly. Thank you for your interest in Embody Hockey—let’s hit the ice together!</p>
+                <a class="btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="grid-item about-img side-img"></div>
+        <div class="grid-item project-img side-img"></div>
+        <div class="grid-item programs">
+            <div class="item-inner">
+                <h1>Programs</h1>
+                <p>At Embody Hockey, we offer a comprehensive range of training programs designed to elevate players of all ages and skill levels. Our programs focus on essential aspects of the game, including skill development, tactical understanding, and physical conditioning. Led by experienced coaches with a deep passion for the sport, each session is tailored to meet the unique needs of our players, ensuring they receive personalized attention and guidance.</p>
+                <a class="btn">Browse Programs</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="info">
+          <br>
+          <!-- Logo Image -->
+          <img style="width:150px;" src="https://static.wixstatic.com/media/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png/v1/fill/w_886,h_886,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/170672_95ea8637ec984e0185b6a933625cdddb~mv2.png" alt="Embody Hockey Logo" />
+          
+          <!-- Description of the company -->
+          <p class="description">
+            Elevate Your Game with Embody Hockey! Discover expert training, develop your skills, and embrace the thrill of the ice. Join us and transform your passion into performance!
+          </p>
+          <br/>
+          
+          <!-- Copyright Information -->
+          <p style="font-size:0.7rem; line-height:15px">
+            <span class="material-icons" style="font-size: 0.6rem;padding-right: 3px;">copyright</span>
+            2025 Embody Hockey. All Rights Reserved.<br />
+            A digital product by
+            <a href="https://www.khanacademy.org/profile/kaid_1141658061792924357651232" aria-label="Visit AwesomeOrion.KA's profile on Khan Academy">AwesomeOrion.KA</a>
+          </p>
+          <div class="social-media">
+            <a data-testid="linkElement" href="https://www.instagram.com/embodyhockey/" target="_blank" rel="noreferrer noopener" class="oRtuWN" aria-label="Instagram"><wow-image id="img_0_comp-k9nqb0mb" class="HlRz5e YaS0jR" data-image-info="{&quot;containerId&quot;:&quot;dataItem-ljlyya43-comp-k9nqb0mb&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:201,&quot;height&quot;:201,&quot;uri&quot;:&quot;11062b_55e4be1e75564866b6c28290f9a9d271~mv2.png&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG dataItem-ljlyya43-comp-k9nqb0mb" data-bg-effect-name="" data-has-ssr-src="" style="--wix-img-max-width:max(201px, 100%)"><img alt="Instagram" data-ssr-src-done="true" fetchpriority="high" src="https://static.wixstatic.com/media/11062b_55e4be1e75564866b6c28290f9a9d271~mv2.png/v1/fill/w_36,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_55e4be1e75564866b6c28290f9a9d271~mv2.png" style="width: 20px; height: 20px; object-fit: cover;"></wow-image></a>
+            <a data-testid="linkElement" href="https://www.facebook.com/groups/1294312327837254" target="_blank" rel="noreferrer noopener" class="oRtuWN" aria-label="Facebook"><wow-image id="img_1_comp-k9nqb0mb" class="HlRz5e YaS0jR" data-image-info="{&quot;containerId&quot;:&quot;dataItem-lgdvx4wr-comp-k9nqb0mb&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:201,&quot;height&quot;:201,&quot;uri&quot;:&quot;11062b_2381e8a6e7444f4f902e7b649aa3f0ac~mv2.png&quot;,&quot;name&quot;:&quot;Facebook&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG dataItem-lgdvx4wr-comp-k9nqb0mb" data-bg-effect-name="" data-has-ssr-src="" style="--wix-img-max-width:max(201px, 100%)"><img alt="Facebook" data-ssr-src-done="true" fetchpriority="high" src="https://static.wixstatic.com/media/11062b_2381e8a6e7444f4f902e7b649aa3f0ac~mv2.png/v1/fill/w_36,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Facebook.png" style="width: 20px; height: 20px; object-fit: cover;"></wow-image></a>
+            <a data-testid="linkElement" href="https://twitter.com/EmbodyHockey" target="_blank" rel="noreferrer noopener" class="oRtuWN" aria-label="Twitter"><wow-image id="img_2_comp-k9nqb0mb" class="HlRz5e YaS0jR" data-image-info="{&quot;containerId&quot;:&quot;dataItem-lgdvx4wx-comp-k9nqb0mb&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:201,&quot;height&quot;:201,&quot;uri&quot;:&quot;11062b_e9b4e9522d3c4de3a8a652c7f13af3ef~mv2.png&quot;,&quot;name&quot;:&quot;Twitter&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG dataItem-lgdvx4wx-comp-k9nqb0mb" data-bg-effect-name="" data-has-ssr-src="" style="--wix-img-max-width:max(201px, 100%)"><img alt="Twitter" data-ssr-src-done="true" fetchpriority="high" src="https://static.wixstatic.com/media/11062b_e9b4e9522d3c4de3a8a652c7f13af3ef~mv2.png/v1/fill/w_36,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Twitter.png" style="width: 20px; height: 20px; object-fit: cover;"></wow-image></a>
+        </div>
+        </div>
+      </footer>
+      <div id="overlay" onclick="closeNav()"></div>
+      <script type="module">
+        document.querySelector('.ripple-button').addEventListener('click', function (e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            ripple.classList.add('ripple');
+
+            this.appendChild(ripple);
+
+            // Remove the ripple element after the animation ends
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
+            });
+        });
+    </script>
+  </body>
+</html>
