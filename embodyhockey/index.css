@@ -122,6 +122,7 @@ nav.topnav {
     font-size:13px;
     font-family: sans-serif;
     z-index:10;
+    pointer-events: none;
 }
 .js-links .account-icon {
     margin-left:40px;
