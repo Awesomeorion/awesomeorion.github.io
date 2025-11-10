@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+/**
+    Orion Studios v3
+    by AwesomeOrion a.k.a. Orion Studios
+    
+    => Go to the Tips & Thanks and post a dot (.) in the Subscribe Thread to get notified when I release a cool program or have an announcement to make.
+
+    => If you are have any questions about how to subscribe, please tell me in the Questions section below. I will try to get back to you as soon as possible!
+    
+    Suggested scheme: Red and Light
+    Last updated: October 24, 2025
+    
+    © 2025 by AwesomeOrion
+**/
+</script>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport"content="width=device-width,initial-scale=1">
-    <title>Wip</title>
+    <title>Orion Studios v3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&family=Open+Sans:wght@400;500&family=Roboto+Slab:wght@100..900&family=Roboto&display=swap" rel="stylesheet">
@@ -68,6 +84,7 @@
         }
         a { 
             text-decoration:none;
+            color:var(--primary);
         }
         hr { 
             margin:20px 0;
@@ -114,7 +131,7 @@
           width: 100%;
           padding: 17px 22px;
           transition: 0.2s;
-          font-family:Poppins;
+          font-family:Poppins, var(--fallback-font);
         }
         nav a:hover { 
           background: rgba(255, 255, 255, 0.2);
@@ -148,7 +165,7 @@
         }
         nav .logo h3 { 
             color:#fff;
-            font-family:"Roboto Slab", sans-serif;
+            font-family:"Roboto Slab", var(--fallback-font);
         }
         .close-menu {
           position:absolute;
@@ -179,7 +196,6 @@
           width: 100%;
           height: 100%;
           z-index: -2;
-          display:none;
         }
       
         .real-header {
@@ -213,7 +229,7 @@
         }
         .hero-header a:not(.logo) {
             color:#fff;
-            font-family:"Open Sans";
+            font-family:"Open Sans", var(--fallback-font);
             margin-left:10px;
             transition:0.1s;
         }
@@ -233,7 +249,7 @@
             transition:0.3s;
         }
         .real-header a h3, .hero-header a h3 { 
-            font-family:"Roboto Slab", sans-serif;
+            font-family:"Roboto Slab", var(--fallback-font);
             font-size:1rem;
             margin-left:5px;
         }
@@ -308,7 +324,7 @@
         }
         .hero h1 { 
             font-weight:400;
-            font-family:"Roboto Slab", sans-serif;
+            font-family:"Roboto Slab", var(--fallback-font);
             font-size: 2.1rem;
             margin-bottom: 10px;
         }
@@ -332,7 +348,7 @@
             color:#fff;
             cursor:pointer;
             font-weight:500;
-            font-family:"Open sans";
+            font-family:"Open sans", var(--fallback-font);
             background: rgba(255, 255, 255,0.1);
             transition: 0.4s;
             font-size:0.8rem;
@@ -358,10 +374,10 @@
         
         .home-slider {
             position:relative;
-            overflow-x:hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow:hidden;
+            border: 1px solid var(--hr);
             width:100%;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
         }
         .home-slider:hover > .slider-btns {
             opacity:1;
@@ -408,7 +424,7 @@
                 flex-shrink: 0;
         }
         .glass h2 {
-            font-family:"Open Sans";
+            font-family:"Open Sans", var(--fallback-font);
         }
         .glass p {
             line-height:24px;
@@ -426,7 +442,7 @@
             color:#fff;
             cursor:pointer;
             font-weight:500;
-            font-family:"Open Sans";
+            font-family:"Open Sans", var(--fallback-font);
             transition: 0.4s;
             background:var(--primary);
             margin:10px 0;
@@ -480,7 +496,7 @@
         footer ul a {
             color:var(--text);
             line-height: 30px;
-            font-family: 'Roboto';
+            font-family: 'Roboto', var(--fallback-font);
         }
         footer a:hover {
             text-decoration: underline;
@@ -572,7 +588,7 @@
             perspective: 1000px;
             color:#fff;
             border-radius: 10px;
-            font-family:"Open Sans";
+            font-family:"Open Sans", var(--fallback-font);
             cursor:pointer;
         }
         .flip-card-inner {
@@ -613,7 +629,7 @@
             z-index:1;
             font-size: 1.5rem;
             margin-top: 10px;
-            font-family:"Roboto Slab";
+            font-family:"Roboto Slab", var(--fallback-font);
             color:var(--text-color);
         }
         .flip-card p { 
@@ -677,13 +693,12 @@
             color:#fff;
             opacity:1;
             transition:1s;
-            display:none;
         }
         .load-popup img {
             width:75px;
         }
         .load-popup h1 {
-            font-family:"Roboto Slab";
+            font-family:"Roboto Slab", var(--fallback-font);
         }
         .load-popup p {
             margin:15px 0;
@@ -891,7 +906,7 @@
             font-size:2.5rem;
         }
         .counter-box :nth-child(2) {
-            font-family:"poppins";
+            font-family:"poppins", var(--fallback-font);
             font-weight:bold;
             color:var(--text);
             transition:0.2s;
@@ -926,8 +941,8 @@
         }
         @keyframes slideIn-up{
             from{
-                -webkit-transform: translateY(50px);
-                transform: translateY(50px);
+                -webkit-transform: translateY(25px);
+                transform: translateY(25px);
             }
             to{
                 -webkit-transform: translateY(0);
@@ -962,6 +977,88 @@
             pointer-events:none;
             opacity:0;
             transition:0.4s;
+        }
+        
+        .changer .btns {
+            width:100%;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .changer button {
+            position:relative;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:33.333%;
+            background:none;
+            padding:15px;
+            /*margin-top:10px;*/
+            color:var(--text);
+            background:var(--other-color);
+            border:1px solid var(--light-color);
+            border:none;
+            transition:0.2s;
+            cursor:pointer;
+            overflow:hidden;
+        }
+        .changer button span {
+            pointer-events:none;
+            margin-right:3px;
+        }
+        .changer button:hover {
+            background:var(--coll);
+        }
+        .changer button:before {
+            content:"";
+            position:absolute;
+            background:var(--primary);
+            width:100%;
+            height:3px;
+            bottom:-3px;
+            transition:0.2s;
+        }
+        .changer button.active:before {
+            bottom:0;
+        }
+        .changer-p {
+            height:40px;
+        }
+        .changer-p p {
+            margin-top:15px;
+            display:none;
+            opacity:0;
+            transition:0.3s;
+        }
+        
+        .featured-p div {
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .featured-p :nth-child(2) a {
+            width:49%;
+            margin-top:15px;
+            transition:0.2s;
+        }
+        .featured-p :nth-child(2) a:hover {
+            transform:translateY(-5px);
+        }
+        .featured-p :nth-child(2) a img {
+            width:100%;
+            border-radius:5px;
+            border:1px solid var(--light-color);
+        }
+        
+        .thumb {
+           overflow:hidden;height:600px;width:100%;background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Galactic_Center_Of_Milky_Way..jpg/1600px-Galactic_Center_Of_Milky_Way..jpg?20121019120013");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;flex-flow:column nowrap;
+        }
+        .thumb h1 {
+            font-size:110px;color:rgb(255, 255, 255);font-family:'Roboto Slab','Roboto',arial;margin-bottom:50px;
+        }
+        .thumb p {
+            font-size:30px;
+            color:#fff;
         }
 
         @keyframes fade-in {
@@ -1071,49 +1168,85 @@
                 <h2 class="scroll-element up">Hello There!</h2>
                 <p class="scroll-element up">I'm AwesomeOrion, aka Orion Studios!<br/>Welcome to my official KA website!</p>
                 <br/>
-                <article class="scroll-element up">
+                <div class="scroll-element up">
                 <h3>Website Stats</h3>
                 <div class="counter-holder">
                     <div class="counter-box">
                         <span class="material-symbols-rounded">html</span>
-                        <span class="counter" value="1700">1700+</span>
+                        <span class="counter" value="1900">1900+</span>
                         <span>Lines</span>
                     </div>
                     <div class="counter-box">
                         <span class="material-symbols-rounded">javascript</span>
-                        <span class="counter" value="300">300+</span>
+                        <span class="counter" value="500">500+</span>
                         <span>Lines</span>
                     </div>
                     <div class="counter-box">
                         <span class="material-symbols-rounded">css</span>
-                        <span class="counter" value="900">900+</span>
+                        <span class="counter" value="1000">1000+</span>
                         <span>Lines</span>
                     </div>
                 </div>
                 <p style="font-size:0.8rem">All coded by <em>hand</em>.</p>
-                </article>
+                </div>
                 <hr class="scroll-element up"/>
                 <div class="home-slider scroll-element up">
                     <div class="home-slider-holder">
                         <div class="glass s1">
                             <h2>About Me</h2>
                             <p>I'm a computer programmer who likes to create programs on Khan Academy on a wide variety of topics including web development, game development, tutorials, graphics, and more. I've programmed over 100 programs on Khan Academy!</p>
-                            <button class="ripple-button" onclick="rippleBtnScene(1)">Learn More</button>
+                            <button class="ripple-button" onclick="rippleBtnScene(4)">Learn More</button>
                         </div>
                         <div class="glass s2">
                             <h2>My Programs</h2>
                             <p>I create a variety of programs that showcase my skills in web and game development. From interactive websites to captivating games and educational tutorials, my projects are designed to engage and inspire. I utilize technologies like HTML and JavaScript to bring my creative visions to life.</p>
-                            <button class="ripple-button right" onclick="rippleBtnScene(1)">View My Work</button>
+                            <button class="ripple-button right" onclick="rippleBtnScene(2)">View My Work</button>
                         </div>
                         <div class="glass s3">
                             <h2>Connect With Me</h2>
                             <p>Subscribe to receive updates on my latest projects and insights. I'm always open to collaboration, so if you have ideas to share or want to work together, I’d love to hear from you!</p>
-                            <button class="ripple-button" onclick="rippleBtnScene(1)">Subscribe Now</button>
+                            <button class="ripple-button" onclick="rippleBtnScene(3)">Subscribe Now</button>
                         </div>
                     </div>
                     <div class="slider-btns">
                         <button onclick="slideLeft()" class="material-symbols-rounded">keyboard_arrow_left</button>
                         <button onclick="slideRight()" class="material-symbols-rounded">keyboard_arrow_right</button>
+                    </div>
+                    <div class="changer">
+                        <div class="btns">
+                            <button onclick="updateChanger(event,'who')" class="active">
+                                <span class="material-symbols-rounded">person</span>
+                                Who
+                            </button>
+                            <button onclick="updateChanger(event,'what')" class="">
+                                <span class="material-symbols-rounded">help</span>
+                                What
+                            </button>
+                            <button onclick="updateChanger(event,'where')" class="">
+                                <span class="material-symbols-rounded">planet</span>
+                                Where
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-element up changer-p">
+                    <p id="who" style="display:block;opacity:1">I am a very young programmer interested in Full Stack Development, User Interface (UI) design, and making games.</p>
+                    <p id="what">This is my official KA website, my subscription, information, and projects page.</p>
+                    <p id="where">Earth, the third planet from the sun. Also online at the Khan Academy Computer Science community.</p>
+                </div>
+                <br/>
+                <div class="scroll-element up featured-p">
+                    <div>
+                        <h2>Featured Projects</h2>
+                        <a href="javascript:changePage(2)">View All Projects</a>
+                    </div>
+                    <div>
+                        <a href="https://www.khanacademy.org/computer-programming/orion-editor-v07-launch/6538929749737472" target="_blank" rel="noopener">
+                            <img src="https://www.khanacademy.org/computer-programming/orion-editor-v07-launch/6538929749737472/5475035750449152.png"/>
+                        </a>
+                        <a href="https://www.khanacademy.org/computer-programming/shohei-ohtani-khantober-2025/4510084420452352" target="_blank" rel="noopener">
+                            <img src="https://www.khanacademy.org/computer-programming/shohei-ohtani-khantober-2025/4510084420452352/5432841238855680.png"/>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1204,6 +1337,9 @@
                 <hr/>
                 <h2>Who Am I?</h2>
                 <p>I'm a computer programmer that likes to create programs on Khan Academy on a wide variety of topics including web development, game development, tutorials, graphics, and more. I've programmed over 100 programs on Khan Academy!</p>
+                <div class="stats">
+                    
+                </div>
                 <br/>
                 <div class="languages">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png"/>
@@ -1283,7 +1419,7 @@
                     <a href="https://www.khanacademy.org/computer-programming/awesomeorions-subpage/6293773329285120" target="_blank" rel="noopener">Subpage v2</a>
                 </li>
                 <li>
-                    <a href="https://www.khanacademy.org/computer-programming/wip/5624669315645440" target="_blank" rel="noopener">Subpage v3 [WIP]</a>
+                    <a href="https://www.khanacademy.org/computer-programming/orion-studios-v3/4970259604422656" target="_blank" rel="noopener">Subpage v3</a>
                 </li>
             </ul>
         </div>
@@ -1311,7 +1447,7 @@
     
     <div id="overlay"></div>
     <div id="scene-transition"></div>
-    
+
     <!-- Particles.js Config -->
     <script type>
         particlesJS("particles-js", {
@@ -1551,7 +1687,7 @@
         //] Page Switching
         //[ 
             var projects = [ 
-                {name: "Orion Editor [WIP]",url: "https://www.khanacademy.org/computer-programming/orion-editor-v07-launch/6538929749737472",descriptions: "A code editor made for people on KA.",votes: 0,spinOffs: 0,},{name: "Shadøw Pumpkin",url: "https://www.khanacademy.org/computer-programming/shadw-pumpkin/6141847047618560",descriptions: "A logo made for Shadøw_Pu₥Ϸkin's logo contest.",votes: 10,spinOffs: 0,},{name: "Lazerwolf Birthday",url: "https://www.khanacademy.org/computer-programming/lazerwolf-birthday-thing-i-know-im-soooo-late/6738807394582528",descriptions: "A graphic made for Lazerwolf's birthday competition.",votes: 21,spinOffs: 0,},{name: "Brawl Stars Pins",url: "https://www.khanacademy.org/computer-programming/brawl-stars-pins-tco-2025/5910931122012160",descriptions: "Some Brawl Stars graphics made for TCO.",votes: 29,spinOffs: 1,},{name: "AstroChat",url: "https://www.khanacademy.org/computer-programming/astrochat-ai/6235598416363520",descriptions: "A database powered chatbot simulating AI.",votes: 46,spinOffs: 0,},{name: "Shoot to SCORE [Menu]",url: "https://www.khanacademy.org/computer-programming/shoot-to-score-menu/5507449280184320",descriptions: "A menu for a game I might finish.",votes: 0,spinOffs: 0,},{name: "Cosmic Balance",url: "https://www.khanacademy.org/computer-programming/cosmic-balance-zoom-pan/6637298488819712",descriptions: "An interactive space graphic made for TCO.",votes: 27,spinOffs: 0,},{name: "QR Code Generator",url: "https://www.khanacademy.org/computer-programming/qr-code-generator/5293989123178496",descriptions: "A working QR code generator.",votes: 7,spinOffs: 0,},{name: "Purple Alien Logo/Intro",url: "https://www.khanacademy.org/computer-programming/purple-alien-logo/6669569335672832",descriptions: "The winner of ALIEN's logo contest.",votes: 5,spinOffs: 0,},{name: "Unnamed Graphic",url: "https://www.khanacademy.org/computer-programming/unnamed-graphic/5209007244558336",descriptions: "Name Ideas? T&T.",votes: 23,spinOffs: 0,},{name: "desk",url: "https://www.khanacademy.org/computer-programming/desk/6386855503839232",descriptions: "A flat art graphic of an office.",votes: 0,spinOffs: 0,},{name: "Orion Logo",url: "https://www.khanacademy.org/computer-programming/logo/6381013509455872",descriptions: "Just another of my logos.",votes: 14,spinOffs: 0,},{name: "Where's Waldo? (GAME)",url: "https://www.khanacademy.org/computer-programming/wheres-waldo-game/6240329486745600",descriptions: "The first game I ever made. (so kinda low kwality)",votes: 43,spinOffs: 1,},{name: "Alien Logo",url: "https://www.khanacademy.org/computer-programming/alien-logo-finished/6538941252419584",descriptions: "A random alien logo.",votes: 25,spinOffs: 5,},{name: "Random Logo + Intro",url: "https://www.khanacademy.org/computer-programming/random-logo-intro/4849706118594560",descriptions: "A gladiator logo and intro.",votes: 3,spinOffs: 0,},{name: "Boazons Subpage",url: "https://www.khanacademy.org/computer-programming/boazons-subpage/5102781933928448",descriptions: "A subpage made for Boazon's competition. (I'm sorry for the horrible thumbnail)",votes: 2,spinOffs: 0,},{name: "Quiz Time",url: "https://www.khanacademy.org/python-program/quiz-time/5004038935330816",descriptions: "My first ever python program",votes: 6,spinOffs: 0,},{name: "The Office",url: "https://www.khanacademy.org/computer-programming/the-office-finished-game/6585989729796096",descriptions: "A platformer that is my second game. (lo kwality)",votes: 29,spinOffs: 0,},{name:"The Clicker",url:"https://www.khanacademy.org/computer-programming/the-clicker-khantober/5837036100108288",descriptions:"My first clicker, made for Khantober.",votes:10,spinOffs:0},
+                {name: "Shohei Ohtani",url: "https://www.khanacademy.org/computer-programming/shohei-ohtani-khantober-2025/4510084420452352",descriptions: "A detailed, colorful website about my favorite baseball player.",votes: 0,spinOffs: 0,},{name: "Orion Editor [WIP]",url: "https://www.khanacademy.org/computer-programming/orion-editor-v07-launch/6538929749737472",descriptions: "A code editor made for people on KA.",votes: 0,spinOffs: 0,},{name: "Shadøw Pumpkin",url: "https://www.khanacademy.org/computer-programming/shadw-pumpkin/6141847047618560",descriptions: "A logo made for Shadøw_Pu₥Ϸkin's logo contest.",votes: 10,spinOffs: 0,},{name: "Lazerwolf Birthday",url: "https://www.khanacademy.org/computer-programming/lazerwolf-birthday-thing-i-know-im-soooo-late/6738807394582528",descriptions: "A graphic made for Lazerwolf's birthday competition.",votes: 21,spinOffs: 0,},{name: "Brawl Stars Pins",url: "https://www.khanacademy.org/computer-programming/brawl-stars-pins-tco-2025/5910931122012160",descriptions: "Some Brawl Stars graphics made for TCO.",votes: 29,spinOffs: 1,},{name: "AstroChat",url: "https://www.khanacademy.org/computer-programming/astrochat-ai/6235598416363520",descriptions: "A database powered chatbot simulating AI.",votes: 46,spinOffs: 0,},{name: "Shoot to SCORE [Menu]",url: "https://www.khanacademy.org/computer-programming/shoot-to-score-menu/5507449280184320",descriptions: "A menu for a game I might finish.",votes: 0,spinOffs: 0,},{name: "Cosmic Balance",url: "https://www.khanacademy.org/computer-programming/cosmic-balance-zoom-pan/6637298488819712",descriptions: "An interactive space graphic made for TCO.",votes: 27,spinOffs: 0,},{name: "QR Code Generator",url: "https://www.khanacademy.org/computer-programming/qr-code-generator/5293989123178496",descriptions: "A working QR code generator.",votes: 7,spinOffs: 0,},{name: "Purple Alien Logo/Intro",url: "https://www.khanacademy.org/computer-programming/purple-alien-logo/6669569335672832",descriptions: "The winner of ALIEN's logo contest.",votes: 5,spinOffs: 0,},{name: "Unnamed Graphic",url: "https://www.khanacademy.org/computer-programming/unnamed-graphic/5209007244558336",descriptions: "Name Ideas? T&T.",votes: 23,spinOffs: 0,},{name: "desk",url: "https://www.khanacademy.org/computer-programming/desk/6386855503839232",descriptions: "A flat art graphic of an office.",votes: 0,spinOffs: 0,},{name: "Orion Logo",url: "https://www.khanacademy.org/computer-programming/logo/6381013509455872",descriptions: "Just another of my logos.",votes: 14,spinOffs: 0,},{name: "Where's Waldo? (GAME)",url: "https://www.khanacademy.org/computer-programming/wheres-waldo-game/6240329486745600",descriptions: "The first game I ever made. (so kinda low kwality)",votes: 43,spinOffs: 1,},{name: "Alien Logo",url: "https://www.khanacademy.org/computer-programming/alien-logo-finished/6538941252419584",descriptions: "A random alien logo.",votes: 25,spinOffs: 5,},{name: "Random Logo + Intro",url: "https://www.khanacademy.org/computer-programming/random-logo-intro/4849706118594560",descriptions: "A gladiator logo and intro.",votes: 3,spinOffs: 0,},{name: "Boazons Subpage",url: "https://www.khanacademy.org/computer-programming/boazons-subpage/5102781933928448",descriptions: "A subpage made for Boazon's competition. (I'm sorry for the horrible thumbnail)",votes: 2,spinOffs: 0,},{name: "Quiz Time",url: "https://www.khanacademy.org/python-program/quiz-time/5004038935330816",descriptions: "My first ever python program",votes: 6,spinOffs: 0,},{name: "The Office",url: "https://www.khanacademy.org/computer-programming/the-office-finished-game/6585989729796096",descriptions: "A platformer that is my second game. (lo kwality)",votes: 29,spinOffs: 0,},{name:"The Clicker",url:"https://www.khanacademy.org/computer-programming/the-clicker-khantober/5837036100108288",descriptions:"My first clicker, made for Khantober.",votes:10,spinOffs:0},
             ];
             
             //note to self: update this whenever you add new projects
@@ -1689,6 +1825,27 @@
 
         //] Scroll Elements + Counters
         //[
+        var changeBtns = document.querySelectorAll('.changer button');
+        var changePs = document.querySelectorAll('.changer-p p');
+        function updateChanger(e, value) {
+            changeBtns.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            changePs.forEach(function(p) {
+                p.style.opacity = 0;
+                p.style.display = 'none';
+            });
+            
+            
+            document.getElementById(value).style.display = 'block';
+            setTimeout(function() {
+                document.getElementById(value).style.opacity = 1;
+            },300)
+            e.target.classList.add('active');
+        }
+
+        //] Changer things
+        //[
             function scrollToTop() {  
                 window.scrollTo({
                     top: 0,
@@ -1725,5 +1882,49 @@
             changePage(1);
         //] Misc. Functions
     </script>
+    <!-- Thumbnail -->
+    <script type="module">
+        document.body.addEventListener("keydown", function(e) {
+            if (e.code === "Escape") {
+                document.body.innerHTML = `
+                          <div class='thumb'>
+                                <p>Subscribe to</p>
+                              <h1>Orion Studios</h1>
+                          </div>
+                      `;
+
+            }
+
+            if (e.code === "Enter") {
+                e.preventDefault();
+            }
+        });
+    </script>
+    <!-- The Thumbnail Script 2.0.0 10/24/2023 by Bluebird@kaid_157624541333313939750668 -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script type>
+      var r = 600;
+      var s = document.documentElement.clientWidth;
+      window.parent.html2canvas = e => {
+        try {
+          html2canvas(document.body, {
+            width: s,
+            height: s,
+            useCORS: true,
+          }).then(e => {
+            var c = document.createElement("canvas");
+            c.width = r;
+            c.height = r;
+            c.getContext('2d').drawImage(e, 0, 0, e.width, e.height, 0, 0, r, r);
+            window.top.postMessage(c.toDataURL(), "*");
+          }).catch(e => {
+            alert("Thumbnail Script Error: " + e);
+          });
+        } catch {
+          window.top.postMessage(document.createElement("canvas").toDataURL(), "*");
+        }
+      };
+    </script>
   </body>
+  
 </html>
