@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Jersey+10&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Material+Icons&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536/4604600374640640.png"/>
+    <title>GreenFroggy64's Subpage</title>
+    <style>
+        :root {
+            --one: rgb(11,147,52);
+            --two: rgb(67, 67, 67);
+            --three: gold;
+            --fallback-fonts: Roboto, sans-serif;
+            --bg: #f8f9fa;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition:0.1s;
+        }
+        
+        body {
+            background:var(--bg);
+            color:#fff;
+            font-family:"Open Sans", var(--fallback-fonts);
+            overflow-x:hidden;
+        }
+
+        h1 {
+            font-family:var(--fallback-fonts);
+        }
+        h3 {
+            font-family:"Open Sans", var(--fallback-fonts);
+            font-size:1.3rem;
+            font-weight:600;
+        }
+        a {
+            text-decoration:none;
+        }
+        hr {
+            margin:30px 0;
+        }
+        b {
+            font-weight:600;
+        }
+        
+        nav ul {
+            list-style:none;
+        }
+        nav {
+            position:absolute;
+            z-index:99;
+            display:flex;
+            align-items:center;
+            flex-direction:column;
+            width:75px;
+            height:100svh;
+            background:rgb(255, 255, 255);
+            padding:10px 0;
+            position:fixed;
+            box-shadow:0 0 10px #fff;
+            border-right:1px solid rgba(0, 0, 0, 0.1);
+        }
+        nav img {
+            width:55px;
+            margin:3px 0;
+        }
+        nav ul li a {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            color:#000;
+            font-size:12px;
+        }
+        nav > a {
+            position:absolute;
+            bottom:10px;
+        }
+        nav > a img {
+            width:35px;
+        }
+        nav ul li.active a .material-icons {
+            background-position: -50%;
+            background: linear-gradient(to left, var(--one), var(--three));
+            color:#fff;
+        }
+        nav ul li a .material-icons {
+            color:var(--one);
+        }
+        nav ul li a:hover .material-icons {
+            color:var(--three);
+        }
+        
+        div ul li, ol li {
+            margin-left:45px;
+            margin-bottom: 10px;
+            font-size:1rem;
+        }
+        li {
+            margin:12px 0;
+        }
+        li::marker {
+            color: rgb(171, 171, 171);
+        }
+        
+        .hero, .hero div {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            font-size:1.2rem;
+            min-height:100svh;
+            width:100%;
+            color:#fff;
+        }
+        .hero h1 {
+            font-size:3.5rem;
+            color:#fff;
+            font-family:"Jersey 10", var(--fallback-fonts);
+            text-shadow:0 0 3px var(--three);
+        }
+        .hero button {
+            padding:15px 20px;
+            border:none;
+            background: var(--one);
+            margin:10px 10px 10px 0;
+            font-family:Inter, var(--fallback-fonts);
+            transition:0.2s ease;
+            cursor:pointer;
+            font-size:0.8rem;
+            color:#fff;
+            border-radius:0 15px 0 15px;
+        }
+        .hero button:hover {
+            background:rgb(10, 122, 43);
+            border-radius:15px 0 15px 0;
+        }
+        
+        .material-icons {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            width:35px;
+            height:35px;
+            font-size:23px;
+        }
+        .gradient-hr {
+            height: 2px; 
+            background: linear-gradient(to left, var(--one), var(--three));
+            border-radius:15px;
+            border: none;
+            /*margin:3svh 0;*/
+        }
+        .jersey_10 {
+            font-family:'Jersey 10', var(--fallback-fonts);
+            font-weight:300;
+            font-size:2rem;
+        }
+        .flex-row {
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            width:100%;
+        }
+        
+        .page {
+            margin-left:75px;
+            min-height:100svh;
+            width:calc(100vw - 75px);
+            animation:fade-in 0.9s;
+        }
+        .frog-img {
+            position:absolute;
+            z-index:-1;
+            width:100%;
+            height:100svh;
+            background: linear-gradient(to right, rgba(54, 54, 54, 0.2) 30%,rgba(255, 255, 255,0.2)), url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Emerald_Glass_Frog_%28Centrolene_prosoblepon%29..jpg/1600px-Emerald_Glass_Frog_%28Centrolene_prosoblepon%29..jpg?20100702234258") no-repeat center/cover;
+        }
+        
+        .content {
+            padding:20px 5vw;
+            background:var(--bg);
+            color:#000;
+        }
+        .content a {
+            color:var(--one);
+            font-weight:500;
+        }
+        
+        .line {
+            margin:5px auto;
+            height:2px;
+            width:100%;
+            background:var(--three);
+        }
+        
+        .scroll-element {
+            opacity: 0;
+            transition: 0.5s opacity;
+        }
+        .scrolled {
+            opacity: 1;
+        }
+        .scrolled.up {
+            animation: slide-up 0.5s ease-in-out both;
+        }
+        
+        .program-holder {
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap:10px;
+            width:100%;
+        }
+        .program {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://www.khanacademy.org/computer-programming/spin-off-of-image-reader/4511764388626432/5162200896487424.png) no-repeat center/cover fixed;
+            background:#fff;
+            display:flex;
+            justify-content:space-between;
+            padding:18px 10px;
+            border-radius:5px;
+            color:#000;
+            transition:0.2s;
+            height:220px;
+            width:100%;
+            border:1px solid rgba(0, 0, 0, 0.1);
+        }
+        .program:hover {
+            transform:scale(1.03);
+        }
+        .program .description {
+            margin-top:5px;
+        }
+        .program .left { 
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 10px;
+            width:50%;
+        }
+        .program .left img { 
+            height:100%;
+            aspect-ratio: 1;
+            border-radius:8px;
+            max-width:250px;
+            border:1px solid rgba(0, 0, 0,0.1);
+        }
+        .program .right { 
+            width:50%;
+            margin:0 10px;
+        }
+        .program h3 { 
+            background: linear-gradient(to left, var(--one), var(--three));
+            color:var(--one);
+            background-clip:text;
+            text-shadow:0 0 19px #fff;
+            width:200px;
+        }
+        .program span { 
+            font-family:Inter, var(--fallback-fonts);
+            color:var(--three);
+            font-size:0.9rem;
+        }
+        
+        figure { 
+            position:relative;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            aspect-ratio:1;
+            text-align: center;
+        }
+        figure img { 
+            width:75%;
+            aspect-ratio: 1;
+            transform:translateY(-10px);
+        }
+        figcaption { 
+            position:absolute;
+            font-size:0.8rem;
+            text-align:center;
+            color:rgb(161, 161, 161);
+            bottom:10px;
+        }
+        
+        .header {
+            background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Path_in_the_rainforest.jpg/1599px-Path_in_the_rainforest.jpg?20180218110609") no-repeat center/cover fixed;
+            width:100%;
+            padding:30px 5vw;
+            color:#fff;
+        }
+        .footer {
+            margin-top:-10px;
+        }
+        
+        .sort-btns {
+            position:sticky;
+            top:10px;
+            display:flex;
+            align-items:center;
+            background:#fff;
+            width:100%;
+            border-radius:5px;
+            margin-bottom:15px;
+            padding:5px;
+            z-index:3;
+            box-shadow:0 3px 3px 1px rgba(0, 0, 0,0.1);
+            border:1px solid rgba(0, 0, 0, 0.1);
+        }
+        .sort-btns button {
+            flex: 1;
+            padding:15px 0;
+            border:none;
+            border-radius:5px;
+            background:none;
+            cursor:pointer;
+            font-family:"Roboto";
+            transition:0.1s;
+        }
+        .sort-btns button:hover {
+            color:var(--one);
+        }
+        .sort-btns button.active {
+            background:var(--bg);
+        }
+        
+        .float-left {
+            float:left;
+            margin: 0 5px 0 10px;
+        }
+        .float-right {
+            float:right;
+            margin: 0;
+        }
+        
+        #people {
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap:10px;
+            width:100%;
+        }
+        #people > a {
+            position:relative;
+            background:#fff;
+            border:1px solid rgba(0, 0, 0, 0.1);
+            transition:0.2s;
+            border-radius:5px;
+            color:#000;
+            cursor:pointer;
+            display:flex;
+            /*align-items:center;*/
+            flex-flow:column nowrap;
+            justify-content:space-between;
+        }
+        #people > div div:first-of-type {
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            width:100%;
+        }
+        #people p {
+            display:flex;
+            align-items:center;
+            justify-content:baseline;
+            float:right;
+            margin-left:10px;
+            text-align:right;
+            transition:0.2s;
+        }
+        #people > a:hover {
+            transform: scale(1.03);
+        }
+        #people > a {
+            color:#000;
+            padding: 15px 20px;
+            transition:0.2s;
+        }
+        #people img {
+            margin-bottom:3px;
+        }
+        
+        .thumb {
+           overflow:hidden;height:600px;width:100%;background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Emerald_Glass_Frog_%28Centrolene_prosoblepon%29..jpg/1600px-Emerald_Glass_Frog_%28Centrolene_prosoblepon%29..jpg?20100702234258");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;flex-flow:column nowrap;
+        }
+        .thumb h1 {
+            font-size:95px;color:rgb(255, 255, 255);font-family:'Jersey 10','Roboto',arial;margin-bottom:50px;
+        }
+        .thumb p {
+            font-size:30px;
+            color:#fff;
+        }
+        
+        @keyframes slide-up {
+            0% {
+              transform: translateY(30px);
+              opacity: 0;
+            }
+            to {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+        @keyframes fade-in {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        @keyframes fade-out {
+            from {
+                opacity:1;
+            }
+            to {
+                opacity:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="https://www.khanacademy.org/profile/kaid_975241023347256277598232/" target="_blank" rel="noopener">
+                <img src="https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536/4604600374640640.png" alt="GreenFroggy64 logo"/>
+            </a>
+            <div class="line"></div>
+            <li>
+                <a href="#" class="one">
+                    <i class="material-icons">home</i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="two">
+                    <i class="material-icons">palette</i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="three">
+                    <span class="material-icons">
+                        help
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="four">
+                    <span class="material-icons">
+                       mail
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="five">
+                    <span class="material-icons">
+                       groups
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <a href="https://www.khanacademy.org/computer-programming/orion-studios-v3/4970259604422656" target="_blank" rel="noopener">
+            <img src="https://www.khanacademy.org/computer-programming/orion-studios-mini-logo/6230870632022016/5380556899074048.png" alt="orion studios logo"/>
+        </a>
+    </nav>
+    <div class="page">
+        <div class="hero">
+            <div class="frog-img"></div>
+            <p>Welcome to</p>
+            <h1>GreenFroggy64</h1>
+            <button class="two">View Projects</button>
+        </div>
+        <div class="content">
+            <h2 class="jersey_10 scroll-element up">Hello there!</h2>
+            <p class="scroll-element up" style="margin:15px 0">
+                I'm <a href="https://www.khanacademy.org/profile/kaid_975241023347256277598232/" target="_blank" rel="noopener">GreenFroggy64</a>, a.k.a. ThatCodingFrog, a game and web developer here on Khan Academy.
+                <br/><br/>
+                Welcome to my subpage!
+            </p>
+            <hr class="scroll-element up"/>
+            <p class="scroll-element up footer">Ready to sub? Post a ' . ' in the subscribe thread in the<br/>T&T! (No spam, I promise)</p>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <h1>Programs</h1>
+        </div>
+        <div class="content">
+            <h2 class="jersey_10">What Is This?</h2>
+            <p>This is where you see my programs and (hopefully) are amazed and want to subscribe. Click on the image to visit the program.</p>
+            <hr class="gradient-hr"/>
+            <div class="sort-btns">
+                <button class="active" onclick="displayPrograms(event)">All</button>
+                <button onclick="displayPrograms(event, 'games')">Games</button>
+                <button onclick="displayPrograms(event, 'webpages')">Webpages</button>
+                <button onclick="displayPrograms(event, 'graphics')">Graphics</button>
+                <button onclick="displayPrograms(event, 'other')">Other</button>
+            </div>
+            <div class="program-holder" id="programs"></div>
+            <hr/>
+            <p class="footer">Ready to sub? Post a ' . ' in the subscribe thread in the<br/>T&T! (No spam, I promise)</p>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <h1>About</h1>
+        </div>
+        <div class="content">
+            <h2 class="jersey_10">About Me</h2>
+            <p>I'm GreenFroggy64 , a.k.a. ThatCodingFrog, a programmer here on Khan Academy. bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+            <figure class="float-right">
+                <img src="https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536/4604600374640640.png" alt="GreenFroggy64 logo" width="150"/>
+                <figcaption>ThatCodingFrog logo</figcaption>
+            </figure>
+            <br/>
+            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+            <br/>
+            <h2 class="jersey_10">About This Page</h2>
+            <p>This page was made completely by me, <a href="https://www.khanacademy.org/profile/awesomeorion" target="_blank" rel="noopener">AwesomeOrion</a>, in November 2025. I'm a young web-developer interested in all things tech. You can subscribe to me or request a page of your own by clicking <a href="https://www.khanacademy.org/computer-programming/orion-studios-v3/4970259604422656" target="_blank" rel="noopener">here</a> or tapping that mysterious planet in the corner.</p>
+            <hr class="gradient-hr"/>
+            <h2 class="jersey_10">My Services</h2>
+            <ul>
+                <li>
+                    <b>Game Development:</b> Dive into immersive worlds with games designed to entertain and challenge. Explore my innovative projects that push the boundaries of creativity and technology.
+                </li>
+                <li>
+                    <b>Web Development:</b> Discover responsive, visually stunning websites that satisfy all clients. Each project is crafted with care to ensure a seamless user experience across all devices.
+                </li>
+                <li>
+                    <b>Personalized Service:</b> As a solo developer, I provide a unique, hands-on approach. I will work closely with you to understand your vision and bring it to life.
+                </li>
+            </ul>
+            <hr/>
+            <p class="footer">Ready to sub? Post a ' . ' in the subscribe thread in the<br/>T&T! (No spam, I promise)</p>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <h1>Subscribe</h1>
+        </div>
+        <div class="content">
+            <h2 class="jersey_10">How</h2>
+            <ol>
+                <li>Scroll down to the Tips & Thanks</li>
+                <li>Find the subscribe thread</li>
+                <li>Post a ' . ' in the subscribe thread</li>
+                <li>Kick back and relax (You earned it!)</li>
+            </ol>
+            <br/>
+            <h2 class="jersey_10">Why</h2>
+            <br/>
+            <p>After you post your ' . ' in the subscribe thread, every time I release a program you will be notified.</p>
+            <br/>
+            <p>Also you obviously don't want to miss out on my awesome programs that I post in the thread</p>
+            <hr/>
+            <p class="footer">Ready to sub? Post a ' . ' in the subscribe thread in the<br/>T&T! (No spam, I promise)</p>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <h1>Favorite KA Coders</h1>
+        </div>
+        <div class="content">
+            <h2 class="jersey_10">What Is This?</h2>
+            <p>This is just a list of my favorite coders on Khan Academy.</p>
+            <br/>
+            <div id="people"></div>
+            <hr/>
+            <p class="footer">Ready to sub? Post a ' . ' in the subscribe thread in the<br/>T&T! (No spam, I promise)</p>
+        </div>
+    </div>
+    
+    <!--Scroll Animations-->
+    <script>
+        function checkScroll(){
+            const scrollElements = document.querySelectorAll('.scroll-element');
+            for(let i = scrollElements.length; i--;){
+                if(scrollElements[i].getBoundingClientRect().top < window.innerHeight){
+                    scrollElements[i].classList.add('scrolled');
+                }else{
+                    scrollElements[i].classList.remove('scrolled');
+                }
+            }
+        }
+        checkScroll();
+        document.addEventListener('scroll', checkScroll);
+    </script>
+    
+    <!--Page Switching-->
+    <script>
+        var old = 0;
+        var pages = document.querySelectorAll('.page');
+        var flash = document.querySelector('.flash');
+        var navLinks = document.querySelectorAll('nav ul li');
+        navLinks[old].classList.add('active');
+        function navTo(page) {
+            if(old !== page) {
+                old = page;
+                window.scrollTo(0,0);
+                navLinks.forEach(function(link, index) {
+                    if(index === page) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+                
+                pages.forEach(function(p){p.style.display='none'});
+                pages[page].style.display = 'block';
+            }
+        }
+
+        pages.forEach(function(p){p.style.display='none'});
+        pages[old].style.display='block';
+        document.querySelectorAll('.one').forEach(function(b) {
+        b.addEventListener('click', function() {
+            navTo(0);
+        });
+    });
+        document.querySelectorAll('.two').forEach(function(b) {
+        b.addEventListener('click', function() {
+            navTo(1);
+        });
+    });
+        document.querySelectorAll('.three').forEach(function(b) {
+        b.addEventListener('click', function() {
+            navTo(2);
+        });
+    });  
+        document.querySelectorAll('.four').forEach(function(b) {
+        b.addEventListener('click', function() {
+            navTo(3);
+        });
+    });
+        document.querySelectorAll('.five').forEach(function(b) {
+            b.addEventListener('click', function() {
+                navTo(4);
+            });
+        });
+    </script>
+
+    <!--Display Programs & People-->
+    <script>
+        var sortBtns = document.querySelectorAll('.sort-btns button');
+        
+        /*
+            example program:
+                {
+                    date: '[ex. November 7, 2025]',
+                    type: 1,
+                    name: 'my program',
+                    description: 'this is my program',
+                    link: 'https://www.khanacademy.org/computer-programming/greenfroggy64s-subpage/5203304773173248',
+                }
+            
+            types:
+                1 = game
+                2 = webpage
+                3 = graphics
+            anything else is 'Other'
+            
+            notes: 
+                if type is a string(which is perfectly fine) it will be put in the 'Other' section
+                
+                everything except type has to be enclosed a string ( '' )
+                you can put <a> elements in the description
+        */// <= plz read that
+
+        var programs = [
+            {
+                date: "October 7, 2025",
+                type: 3,
+                name: "GreenFroggy64 Logo",
+                link: "https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536",
+                description: "ThatCodingFrog's logo recreated by <a href='https://www.khanacademy.org/profile/awesomeorion'>AwesomeOrion</a>.",
+            },
+            {
+                date: "September 1, 2025",
+                type: "3D Model",
+                name: "The Master Sword",
+                link: "https://www.khanacademy.org/computer-programming/khantober-model-the-master-sword/4745607802109952",
+            },
+            {
+                date: "September 1, 2025",
+                type: 2,
+                name: "New Webpage",
+                link: "https://www.khanacademy.org/computer-programming/new-webpage/6545915368816640",
+            },
+        ];
+        /*
+            example person:
+                {
+                    name:'AwesomeOrion',
+                    description:'I'm awesome',
+                    profileLink:'https://www.khanacademy.org/profile/awesomeorion', 
+                    imageUrl: 'https://cdn.kastatic.org/images/avatars/svg/cs-hopper-cool.svg'
+                },
+                
+            note: you cannot put <a> elements in the description
+        */// <= plz read that
+        var people = [
+            {
+                name:"AwesomeOrion",
+                description:"He's the guy who made this subpage. He's awesome and you should really check him out.",
+                profileLink:"https://www.khanacademy.org/profile/awesomeorion", 
+                imageUrl: "https://www.khanacademy.org/computer-programming/orion-studios-mini-logo-2/4636840412430336/5032403159072768.png"
+            },
+            {
+                name:"ThatCodingFrog",
+                description:"It's me.",
+                profileLink:"https://www.khanacademy.org/profile/kaid_975241023347256277598232", 
+                imageUrl: "https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536/4604600374640640.png"
+            },
+        ];
+
+        function displayPrograms(e, pType) {
+            if (e && e.target) {
+                sortBtns.forEach(function(btn) {
+                    btn.classList.remove('active');
+                })
+                e.target.classList.add('active');
+                window.scrollTo(0,0);
+            }
+        
+            var typeMap = {
+                1: "Game",
+                2: "Webpage",
+                3: "Graphic",
+                4: "Other"
+            };
+            
+            var newList = programs.filter(function(p) {
+                return !pType || 
+                       (pType === 'games' && p.type === 1) || 
+                       (pType === 'webpages' && p.type === 2) || 
+                       (pType === 'graphics' && p.type === 3) || 
+                       (pType === 'other' && (p.type === 4 || !p.type || typeof p.type === 'string'));
+            });
+        
+            var programContainer = document.getElementById('programs');
+            programContainer.innerHTML = '';
+            
+            if(newList.length < 1) {
+                programContainer.innerHTML = 'There are no items under this category.';
+            }
+        
+            for (var i=0;i< newList.length;i++) {
+                var item = newList[i];
+                var name = item.name || "No Name",
+                    link = item.link,
+                    description = item.description || "No Description.",
+                    img = link + "/latest.png",
+                    type = typeMap[item.type] || item.type || "Unknown",
+                    date = item.date || 'Date Unknown';
+        
+                var programDiv = document.createElement('div');
+                programDiv.className = 'program';
+        
+                programDiv.innerHTML = '<a class="left" href="' + link + '" target="_blank">' +
+                                       '<img src="' + img + '" alt="' + name + '"/></a>' +
+                                       '<div class="right">' +
+                                       '<a href="' + link + '" target="_blank"><h3>' + name + '</h3></a>' +
+                                       '<span>' + type + ' • ' + date + '</span>' +
+                                       '<div class="description">' + description + '</div>' +
+                                       '</div>';
+        
+                programContainer.appendChild(programDiv);
+            }
+        }
+        displayPrograms();
+
+        people.forEach(function(p) {
+            if(!p.imageUrl || p.imageUrl.length < 1 || !(p.imageUrl.includes('khanacademy') || p.imageUrl.includes('kastatic'))) {
+                p.imageUrl = "https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/questionmark.png";
+            }
+            if(!p.description || p.description.length < 1) {
+                p.description = "This person has no description."
+            }
+            if(p.description.length > 100) {
+                p.description = p.description.slice(0,100) + ' ...';
+            }
+            
+            document.getElementById('people').innerHTML += '<a href="'+p.profileLink+'" target="_blank" rel="noopener"><div class="flex-row"><img src="'+p.imageUrl+'" alt="'+p.name+' profile picture" width="100"/><p>'+p.description+'</p></div><h3>'+p.name+'</h3></a>';
+        })
+    </script>
+    
+    <!-- Thumbnail -->
+    <script type="module">
+        document.body.addEventListener("keydown", function(e) {
+            if (e.code === "Escape") {
+                document.body.innerHTML = `
+                          <div class='thumb'>
+                                <p>Subscribe to</p>
+                              <h1>GreenFroggy64</h1>
+                          </div>
+                      `;
+
+            }
+
+            if (e.code === "Enter") {
+                e.preventDefault();
+            }
+        });
+    </script>
+    
+    <!--The Thumbnail Script 2.1.0 12/18/2023 by Bluebird@kaid_157624541333313939750668--><script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script><script type>var r=600,s=document.documentElement.clientWidth;window.parent.html2canvas=t=>{try{html2canvas(document.body,{width:s,height:s,useCORS:!0,onclone:t=>t.getAnimations().forEach((t=>{try{t.finish()}catch{}}))}).then((t=>{var e=document.createElement("canvas");e.width=r,e.height=r,e.getContext("2d").drawImage(t,0,0,t.width,t.height,0,0,r,r),window.top.postMessage(e.toDataURL(),"*")})).catch((t=>{alert("Thumbnail Script Error: "+t)}))}catch{window.top.postMessage(document.createElement("canvas").toDataURL(),"*")}};</script>
+</body>
+</html>
